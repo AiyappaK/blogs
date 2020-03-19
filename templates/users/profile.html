@@ -1,0 +1,26 @@
+{% extends 'posts/base.html' %}
+{% load crispy_forms_tags %}
+  {% block content %}
+  <br>
+  <div class="content-class">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{user.profilemodel.image.url}}"  alt="">
+
+        <div class="media-body">
+            <h1 class="account-heading">{{user.username}}</h1>
+          <p class="text-secondary">{{user.email}}</p>
+        </div>
+    </div>
+    <form class="" action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{u_form|crispy}}
+      {{p_form|crispy}}
+      <input type="submit" name="" value="submit">
+      <span>
+        <a href="{% url 'login' %}">login</a>
+      </span>
+    </form>
+  </div>
+<!-- width="100" -->
+
+  {% endblock content %}

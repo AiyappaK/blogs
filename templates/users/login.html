@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+{% load crispy_forms_tags %}
+  {% block content %}
+  <form class="" action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username..." class="form-control">
+    <input type="password" name="password" placeholder="Password..." class="form-control">
+     {% for message in messages %}
+    <p id="messages">{{message}}</p>
+    {% endfor %}
+    <input type="submit" name="" value="submit">
+    <span>
+      <a href="{% url 'register' %}">register</a>
+    </span>
+  </form>
+  {% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<form class="" action="" method="POST">
+  {% csrf_token %}
+<h2>do you want to confirm?</h2>
+  <input type="submit" name="" value="Delete">
+  <a href ="{% url 'index' %}">cancel</a>
+
+  </form>
+    {% endblock %}
